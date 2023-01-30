@@ -10,9 +10,15 @@ import { selectBooks } from '../store/booksselector';
 })
 export class HomeComponent implements OnInit {
   constructor(private store: Store) {}
+
+  //////  books$  is observable variable that listen store state 
+  //// where as store has selector  'selectBooks'
   books$ = this.store.pipe(select(selectBooks));
  
   ngOnInit(): void {
+    //////   when we dispatch action than we pass action , action is used to send data 
+    ////  to reducer where reducer update store state
+    debugger;
     this.store.dispatch(invokeBooksAPI());
   }
 
